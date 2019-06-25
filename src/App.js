@@ -20,48 +20,48 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      userID: '',
-      profileOwnerID: '',
+      loggedinUserId: '',
+      profileOwnerId: '',
       currentPage: 'Home',
-      openLoginModal: false,
-      openSignUpModal: false,
+      showLoginModal: false,
+      showSignUpModal: false,
       mobileUI: false
     }
 
-    this.setUser = this.setUser.bind(this);
+    this.setUserId = this.setUserId.bind(this);
     this.resetUser = this.resetUser.bind(this);
-    this.setProfileOwnerID = this.setProfileOwnerID.bind(this)
-    this.resetProfileOwnerID = this.resetProfileOwnerID.bind(this)
+    this.setprofileOwnerId = this.setprofileOwnerId.bind(this)
+    this.resetprofileOwnerId = this.resetprofileOwnerId.bind(this)
 
     this.setPage = this.setPage.bind(this);
 
-    this.openLoginModal = this.openLoginModal.bind(this);
-    this.closeLoginModal = this.closeLoginModal.bind(this);
-    this.openSignUpModal = this.openSignUpModal.bind(this);
-    this.closeSignUpModal = this.closeSignUpModal.bind(this);
-    this.openProfilePage = this.openProfilePage.bind(this);
+    this.handleOpenLoginModal = this.handleOpenLoginModal.bind(this);
+    this.handleCloseLoginModal = this.handleCloseLoginModal.bind(this);
+    this.handleOpenSignUpModal = this.handleOpenSignUpModal.bind(this);
+    this.handleCloseSignUpModal = this.handleCloseSignUpModal.bind(this);
+    this.handleOpenProfilePage = this.handleOpenProfilePage.bind(this);
   }
-  setUser(userID) {
+  setUserId(loggedinUserId) {
     this.setState({
-      userID: userID,
-      profileOwnerID: userID,
+      loggedinUserId: loggedinUserId,
+      profileOwnerId: loggedinUserId,
     });
   }
   resetUser() {
     localStorage.removeItem('doggositeuser');
     this.setState({
-      userID: '',
-      profileOwnerID: ''
+      loggedinUserId: '',
+      profileOwnerId: ''
     });
   }
-  setProfileOwnerID(profileOwnerID) {
+  setprofileOwnerId(profileOwnerId) {
     this.setState({
-      profileOwnerID: profileOwnerID
+      profileOwnerId: profileOwnerId
     });
   }
-  resetProfileOwnerID() {
+  resetprofileOwnerId() {
     this.setState({
-      profileOwnerID: this.state.userID
+      profileOwnerId: this.state.loggedinUserId
     });
   }
   setPage(page) {
@@ -69,37 +69,37 @@ class App extends React.Component {
       currentPage: page
     })
     if (page !== 'Profile') {
-      this.resetProfileOwnerID()
+      this.resetprofileOwnerId()
     }
   }
-  openLoginModal() {
+  handleOpenLoginModal() {
     this.setState({
-      openLoginModal: true
+      showLoginModal: true
     })
   }
-  closeLoginModal() {
+  handleCloseLoginModal() {
     this.setState({
-      openLoginModal: false
+      showLoginModal: false
     })
   }
-  openSignUpModal() {
+  handleOpenSignUpModal() {
     this.setState({
-      openSignUpModal: true
+      showSignUpModal: true
     })
   }
-  closeSignUpModal() {
+  handleCloseSignUpModal() {
     this.setState({
-      openSignUpModal: false
+      showSignUpModal: false
     })
   }
-  openProfilePage(profileOwnerID) {
-    this.setProfileOwnerID(profileOwnerID);
+  handleOpenProfilePage(profileOwnerId) {
+    this.setprofileOwnerId(profileOwnerId);
     this.setPage("Profile");
   }
   componentDidMount() {
-    var userID = localStorage.getItem('doggositeuser');
-    if (userID) {
-      this.setUser(userID)
+    var loggedinUserId = localStorage.getItem('doggositeuser');
+    if (loggedinUserId) {
+      this.setUserId(loggedinUserId)
     }
   }
   render() {
@@ -137,29 +137,29 @@ class App extends React.Component {
         />
         <div className="header">
           <Navbar
-            userID={this.state.userID}
-            openLoginModal={this.openLoginModal}
-            openSignUpModal={this.openSignUpModal}
+            loggedinUserId={this.state.loggedinUserId}
+            handleOpenLoginModal={this.handleOpenLoginModal}
+            handleOpenSignUpModal={this.handleOpenSignUpModal}
             mobileUI={this.state.mobileUI}
             setPage={this.setPage}
             resetUser={this.resetUser}
           />
           {
-            this.state.openLoginModal ?
+            this.state.showLoginModal ?
               <LoginForm
                 firebase={firebase}
-                setUser={this.setUser}
-                open={this.state.openLoginModal}
-                close={this.closeLoginModal}
+                setUserId={this.setUserId}
+                isOpen={this.state.showLoginModal}
+                onClose={this.handleCloseLoginModal}
               /> : null
           }
           {
-            this.state.openSignUpModal ?
+            this.state.showSignUpModal ?
               <SignUpForm
                 firebase={firebase}
-                setUser={this.setUser}
-                open={this.state.openSignUpModal}
-                close={this.closeSignUpModal}
+                setUserId={this.setUserId}
+                isOpen={this.state.showSignUpModal}
+                onClose={this.handleCloseSignUpModal}
               /> : null
           }
         </div>

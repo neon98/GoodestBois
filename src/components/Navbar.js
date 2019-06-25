@@ -123,13 +123,13 @@ export default class Navbar extends React.Component {
                                     >
                                         <button
                                             className="navbar_item_button"
-                                            onClick={() => { this.props.openLoginModal() }}
+                                            onClick={() => { this.props.handleOpenLoginModal() }}
                                         > Login </button>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="navbar_item">
-                                        <button className="navbar_item_button" onClick={() => { this.props.openSignUpModal() }}> Signup </button>
+                                        <button className="navbar_item_button" onClick={() => { this.props.handleOpenSignUpModal() }}> Signup </button>
                                     </div>
                                 </li>
                             </div>
