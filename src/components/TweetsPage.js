@@ -1,7 +1,7 @@
 import React from 'react';
 import Loader from './Loader';
 
-import '../stylesheets/Homepage.css'
+import '../stylesheets/TweetsPage.css'
 
 export default class TweetsPage extends React.Component {
     constructor(props) {

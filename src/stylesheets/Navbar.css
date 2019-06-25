@@ -3,3 +3,81 @@
     width: 100%;
     position: fixed;
 }
+
+.navbar {
+    display: flex;
+    align-items: center;
+    /* padding-left: 10px; */
+    margin: 0;
+    height: 60px;
+    background: white;
+    padding: 0 13%;
+    list-style: none;
+    border-bottom: 1px solid rgb(234, 234, 234);
+    /* box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2); */
+}
+
+.navbar li:not(:last-child):not(:first-child):not(.navbar_brand_icon_wrapper) {
+    margin-right: 3px;
+}
+
+.navbar_brand_icon_wrapper {
+    margin: 0 auto 0 20px;
+    cursor: pointer;
+}
+
+.navbar_brand_icon {
+    width: 30px;
+    height: 30px;
+}
+
+.navbar_item {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 3px 5px;
+}
+
+.navbar_item:hover {
+    background: rgb(232, 232, 232);
+}
+
+.navbar_item_icon {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+}
+
+.navbar_item_text {
+    /* padding-top: 3px; */
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.navbar_buttons {
+    display: flex;
+}
+
+.navbar_buttons_when_loggedin {
+    display: flex;
+}
+
+.navbar_item_button {
+    cursor: pointer;
+    height: 30px;
+    /* width: 70px; */
+    /* padding: 4px 7px 5px 7px; */
+    font-size: 16px;
+    font-weight: bold;
+    color: teal;
+    border: none;
+    /* background: teal; */
+    /* border: 1px solid teal; */
+    /* color: white; */
+    /* border-radius: 4px; */
+    /* margin-right: 10px; */
+    outline: none;
+    background: transparent;
+}
