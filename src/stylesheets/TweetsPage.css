@@ -1,0 +1,7 @@
+.tweetsContainer {
+    width: 75%;
+    height: 700px;
+    margin: 70px auto 0px auto;
+    display: flex;
+    justify-content: space-around;
+}
