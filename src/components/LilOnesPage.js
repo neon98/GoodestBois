@@ -9,7 +9,7 @@ export default class LilOnesPage extends React.Component {
     constructor() {
         super();
         this.state = {
-            data: []
+            imageArray: []
         }
     }
 
@@ -23,9 +23,9 @@ export default class LilOnesPage extends React.Component {
                 .then(response => {
                     return response.json()
                 })
-                .then(data =>{
+                .then(response =>{
                     if(this.mounted){
-                        this.setState({ data: data.data.children })
+                        this.setState({ imageArray: response.data.children })
                     }
                 } );
         }
@@ -37,11 +37,12 @@ export default class LilOnesPage extends React.Component {
     }
 
     render() {
-        if (this.state.data.length > 0) {
-            var images = this.state.data.map(data => {
+        var images = [];
+        if (this.state.imageArray.length > 0) {
+            images = this.state.imageArray.map(image => {
                 return (
-                    data.data.url.includes('.jpg' || 'png' || 'jpeg') ?
-                        <img key={data.data.url} src={data.data.url} className='gridItemImage' alt="" />
+                    image.data.url.includes('.jpg' || 'png' || 'jpeg') ?
+                        <img key={image.data.url} src={image.data.url} className='gridItemImage' alt="" />
                         : null
                 )
             })
@@ -49,7 +50,7 @@ export default class LilOnesPage extends React.Component {
         return (
             <div className="gridContainer">
                 {
-                    this.state.data.length ? images : <Loader />
+                    images.length ? images : <Loader />
                 }
             </div>
         );
