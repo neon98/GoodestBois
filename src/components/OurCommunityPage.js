@@ -11,7 +11,7 @@ export default class OurCommunityPage extends React.Component {
     constructor() {
         super();
         this.state = {
-            breeds: [],
+            breedsArray: [],
         }
     }
     componentDidMount() {
@@ -22,7 +22,7 @@ export default class OurCommunityPage extends React.Component {
             .then(result => {
                 if (this.mounted) {
                     this.setState({
-                        breeds: result
+                        breedsArray: result
                     })
                 }
             })
@@ -32,10 +32,10 @@ export default class OurCommunityPage extends React.Component {
         this.mounted = false;
     }
     render() {
-        let breedCards = this.state.breeds.map(breed => <BreedCard key={breed.id} breed={breed} />)
+        let breedCards = this.state.breedsArray.map(breed => <BreedCard key={breed.id} breed={breed} />)
 
         return (
-            <div className="community_page_container" >
+            <div className="community_page_container">
                 <Media
                     query="(max-width: 650px)"
                     onChange={

@@ -2,7 +2,7 @@ import React from 'react';
 import { breedsConfig } from '../config';
 
 import lifespanIcon from '../assets/lifespan.png';
-import heightIcon from '../assets//height.png';
+import heightIcon from '../assets/height.png';
 import weightIcon from '../assets/weight.png';
 
 import '../stylesheets/BreedCard.css';
@@ -35,11 +35,11 @@ export default class BreedCard extends React.Component {
                 </div>
                 <div className="card_content">
                     {
-                        breed.bred_for || breed.origin ?
+                        (breed.bred_for || breed.origin) ?
                             <div className="card_content_information_div">
                                 {
                                     breed.bred_for ?
-                                        <div >
+                                        <div>
                                             <p className="bred_for_title">Bred for</p>
                                             <p className="bred_for_value">{breed.bred_for}</p>
                                         </div>
@@ -124,7 +124,7 @@ class BreedCardImage extends React.Component {
     }
     render() {
         return (
-            this.state.imageUrl.length > 0 ?
+            this.state.imageUrl.length ?
                 <img src={this.state.imageUrl} className="card_image" alt="doggoimage"></img>
                 :
                 null
