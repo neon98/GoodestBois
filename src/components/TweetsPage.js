@@ -21,21 +21,21 @@ export default class TweetsPage extends React.Component {
     render() {
         return (
             <div className="tweetsContainer">
-                <div className="timeline">
+                <div className="twitterTimeline">
                     <TwitterTimelineEmbed
                         sourceType="profile"
                         screenName="dog_feelings"
                         options={{ height: 600, width: 290 }}
                     />
                 </div>
-                <div className="timeline">
+                <div className="twitterTimeline">
                     <TwitterTimelineEmbed
                         sourceType="profile"
                         screenName="mydogiscutest"
                         options={{ height: 600, width: 290 }}
                     />
                 </div>
-                <div className="timeline">
+                <div className="twitterTimeline">
                     <TwitterTimelineEmbed
                         sourceType="profile"
                         screenName="dog_rates"
