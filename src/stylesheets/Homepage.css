@@ -1,6 +1,66 @@
-.container {
+.homepageContainer {
     width: 75%;
     height: 700px;
     display: flex;
     margin: 70px auto 0px auto;
+}
+
+.leftDiv {
+    width: 65%;
+    overflow-y: scroll;
+    padding: 0px 10px 20px 20px;
+    margin-right: 10px;
+    height: 90%;
+    border-radius: 2px;
+    flex-shrink: 3;
+}
+
+ ::-webkit-scrollbar {
+    width: 0 !important
+}
+
+.rightDiv {
+    width: 35%;
+    overflow-y: hidden;
+    height: 90%;
+}
+
+.factContainer {
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+    font-size: 15px;
+    color: #555555;
+    border: 1px solid rgb(234, 234, 234);
+}
+
+.factIcon {
+    height: 16px;
+    width: 18px;
+    margin-right: 5px;
+}
+
+.factContainer>p {
+    margin: 0;
+    padding: 0;
+}
+
+.highestPTBWrapper>div {
+    margin-top: 10px;
+    background: white;
+    border: 1px solid rgb(234, 234, 234)
+}
+
+.highestPTBWrapper>div>p {
+    margin: 0;
+    padding: 10px 5px 10px 20px;
+    border-bottom: 1px solid rgb(234, 234, 234);
+}
+
+.defaultCursor {
+    cursor: default !important;
+}
+
+.highlightDiv {
+    background: lightgray;
 }
