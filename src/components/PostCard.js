@@ -166,7 +166,7 @@ export default class PostCard extends React.Component {
                     </div>
                     <div style={styles.pat_treat_boop_div}
                         onClick={() => { this.handlePTB('treats') }}
-                        className={this.state.treat ? 'highlight' : null}
+                        className={this.state.hasTreat ? 'highlight' : null}
                     >
                         <img style={styles.pat_treat_boop_icon} src={treat} alt="" />
                         <p style={styles.pat_treat_boop_text}>{this.state.post.treats}</p>

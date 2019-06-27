@@ -2,3 +2,119 @@
     margin: 6% auto;
     width: 75%;
 }
+
+.profile_page_container>.header {
+    display: flex;
+    padding: 40px;
+    /* box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2); */
+    border: 1px solid rgb(234, 234, 234);
+    background: white;
+    border-radius: 2px;
+}
+
+@media (max-width:750px) {
+    .profile_page_container>.header {
+        flex-wrap: wrap;
+    }
+}
+
+.profile_picture_wrapper {
+    margin-right: 40px;
+}
+
+.profile_picture {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
+.profile_info_wrapper {
+    margin: 0;
+    flex-shrink: 2;
+}
+
+.profile_info_header {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 10px;
+}
+
+.profile_info_header>h1 {
+    padding: 0px 0px;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+.profile_info_header>.breed_label {
+    margin: 10px 5px 8px 10px;
+    padding: 3px 6px;
+    color: teal;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    word-wrap: break-word;
+    border: 2px solid teal;
+}
+
+.profile_info_header>.edit_icon {
+    cursor: pointer;
+    color: gray;
+    margin: 12px 5px 5px 5px;
+}
+
+.profile_info_wrapper>.profile_info_bio {
+    padding: 10px 10px 0px 10px;
+    margin: 0;
+    word-wrap: break-word;
+    width: 100%;
+}
+
+.pat_treat_boop {
+    display: flex;
+    margin: 20px 5px 20px 5px;
+}
+
+.pat_treat_boop>div {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 5px;
+}
+
+.pat_treat_boop>div>.icon {
+    height: 25px;
+    width: 25px;
+}
+
+.pat_treat_boop>div>.text {
+    font-size: 20px;
+    margin: 0 5px;
+}
+
+.profile_posts {
+    margin-top: 3%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.add_new_post_card {
+    width: 230px;
+    height: 238px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    /* box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2); */
+    border: 1px solid rgb(234, 234, 234);
+    color: grey;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add_new_post_card>div {
+    border: 2px solid grey;
+    border-radius: 50%;
+    padding: 5px 7px;
+}
