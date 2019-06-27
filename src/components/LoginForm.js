@@ -21,6 +21,10 @@ export default class LogInForm extends React.Component {
     }
 
     handleInputChange(event) {
+        var elem = document.getElementById('loginButton');
+        elem.removeAttribute("disabled");
+        elem.classList.remove("disabled");
+
         this.setState({
             [event.target.id]: event.target.value,
             errorMessage: ''
