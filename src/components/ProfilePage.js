@@ -157,7 +157,7 @@ export default class ProfilePage extends React.Component {
                         <ProfileUpdateForm
                             isOpen={this.state.showProfileUpdateForm}
                             onClose={this.handleCloseProfileUpdateForm}
-                            userId={this.state.profileOwner.userid}
+                            profileOwnerId={this.state.profileOwner.userid}
                             username={this.state.profileOwner.username}
                             breedname={this.state.profileOwner.breedname}
                             bio={this.state.profileOwner.bio}

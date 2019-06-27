@@ -41,7 +41,7 @@ export default class ProfileUpdateForm extends React.Component {
 
     handleUpdateProfile() {
         var docRef = this.props.firebase.firestore()
-            .collection('users').doc(this.props.userId);
+            .collection('users').doc(this.props.profileOwnerId);
         if (this.state.imageFile.length > 0) {
             var storageRef = this.props.firebase.storage().ref().child('profilePictures');
             var imageRef = storageRef.child(this.state.userid + '.jpg')
@@ -74,7 +74,7 @@ export default class ProfileUpdateForm extends React.Component {
 
     componentDidMount() {
         this.setState({
-            userid: this.props.userId,
+            userid: this.props.profileOwnerId,
             breedname: this.props.breedname,
             bio: this.props.bio,
             remainingCharCount: this.props.bio ? 100 - this.props.bio.length : 100
