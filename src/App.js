@@ -2,6 +2,8 @@ import React from 'react';
 import Media from 'react-media';
 import * as firebase from 'firebase';
 import { firebaseConfig } from './config';
+import fontawesome from '@fortawesome/fontawesome'
+import { faCheck, faExclamationCircle, faPencilAlt } from '@fortawesome/fontawesome-free-solid'
 
 import Navbar from './components/Navbar';
 import LoginForm from './components/LoginForm';
@@ -15,6 +17,7 @@ import TweetsPage from './components/TweetsPage';
 import './App.css';
 
 firebase.initializeApp(firebaseConfig);
+fontawesome.library.add(faCheck, faExclamationCircle, faPencilAlt);
 
 class App extends React.Component {
   constructor() {
@@ -48,10 +51,14 @@ class App extends React.Component {
     });
   }
   resetUser() {
-    localStorage.removeItem('doggositeuser');
-    this.setState({
-      loggedinUserId: '',
-      profileOwnerId: ''
+    firebase.auth().signOut().then(() => {
+      localStorage.removeItem('doggositeuser');
+      this.setState({
+        loggedinUserId: '',
+        profileOwnerId: ''
+      });
+    }).catch(error => {
+      console.log(error)
     });
   }
   setprofileOwnerId(profileOwnerId) {
