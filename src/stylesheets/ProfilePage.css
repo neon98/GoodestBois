@@ -6,7 +6,8 @@
 .profile_page_container>.header {
     display: flex;
     padding: 40px;
-    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2);
+    /* box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2); */
+    border: 1px solid rgb(234, 234, 234);
     background: white;
     border-radius: 2px;
 }
@@ -104,7 +105,8 @@
     justify-content: center;
     margin-bottom: 20px;
     margin-right: 20px;
-    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2);
+    /* box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2); */
+    border: 1px solid rgb(234, 234, 234);
     color: grey;
     background: white;
     border-radius: 4px;

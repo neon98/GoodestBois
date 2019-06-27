@@ -136,7 +136,7 @@ export default class ProfilePage extends React.Component {
     }
 
     render() {
-        // console.log(this.state.profileOwner.profilePictureUrl);
+
         if (!this.isEmpty(this.state.profileOwner)) {
             var postids = this.state.profileOwner.posts;
             var posts = postids.map(postid =>
@@ -167,7 +167,13 @@ export default class ProfilePage extends React.Component {
                 }
                 {
                     this.state.showAddNewPostForm ?
-                        <AddPostForm /> :
+                        <AddPostForm
+                            isOpen={this.state.showAddNewPostForm}
+                            onClose={this.handleCloseAddNewPostForm}
+                            profileOwnerId={this.state.profileOwner.userid}
+                            username={this.state.profileOwner.username}
+                            firebase={this.props.firebase}
+                        /> :
                         null
                 }
                 <div className="header">
