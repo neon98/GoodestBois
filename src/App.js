@@ -113,7 +113,13 @@ class App extends React.Component {
     var currentPage;
     switch (this.state.currentPage) {
       case "Home":
-        currentPage = <HomePage />
+        currentPage =
+          <HomePage
+            firebase={firebase}
+            setPage={this.setPage}
+            handleOpenProfilePage={this.handleOpenProfilePage}
+            loggedinUserId={this.state.loggedinUserId}
+          />
         break;
       case "Our Community":
         currentPage = <OurCommunityPage />
