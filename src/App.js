@@ -131,7 +131,12 @@ class App extends React.Component {
         currentPage = <TweetsPage />
         break;
       case "Profile":
-        currentPage = <ProfilePage />
+        currentPage =
+          <ProfilePage
+            firebase={firebase}
+            profileOwnerId={this.state.profileOwnerId}
+            loggedinUserId={this.state.loggedinUserId}
+          />
         break;
       default:
         currentPage = <HomePage />
