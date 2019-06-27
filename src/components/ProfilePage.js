@@ -154,7 +154,15 @@ export default class ProfilePage extends React.Component {
             <div className="profile_page_container">
                 {
                     this.state.showProfileUpdateForm ?
-                        <ProfileUpdateForm />
+                        <ProfileUpdateForm
+                            isOpen={this.state.showProfileUpdateForm}
+                            onClose={this.handleCloseProfileUpdateForm}
+                            userId={this.state.profileOwner.userid}
+                            username={this.state.profileOwner.username}
+                            breedname={this.state.profileOwner.breedname}
+                            bio={this.state.profileOwner.bio}
+                            firebase={this.props.firebase}
+                        />
                         : null
                 }
                 {
@@ -164,9 +172,9 @@ export default class ProfilePage extends React.Component {
                 }
                 <div className="header">
                     <div className="profile_picture_wrapper">
-                        <img 
-                            className={this.state.profileOwner.profilePictureUrl ? "profile_picture" : null} 
-                            src={this.state.profileOwner.profilePictureUrl} alt="" 
+                        <img
+                            className={this.state.profileOwner.profilePictureUrl ? "profile_picture" : null}
+                            src={this.state.profileOwner.profilePictureUrl} alt=""
                         />
                     </div>
                     <div className="profile_info_wrapper">
