@@ -1,0 +1,14 @@
+.gridContainer {
+    width: 70%;
+    margin: 80px auto 0px auto;
+    display: grid;
+    grid-gap: 15px 17px;
+    grid-template-columns: repeat(auto-fill, 210px);
+    grid-auto-rows: 210px;
+}
+
+.gridItemImage {
+    height: 210px;
+    width: 210px;
+    border-radius: 5px;
+}

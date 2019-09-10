@@ -1,0 +1,12 @@
+.tweetsContainer {
+    width: 71%;
+    height: 700px;
+    margin: 80px auto 0px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.twitterTimeline {
+    border: 1px solid rgb(234, 234, 234);
+    height: 600px;
+}
